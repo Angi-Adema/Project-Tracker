@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,8 +21,10 @@
     ></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
+
   <body>
     <main>
+
       <section>
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
@@ -32,47 +35,77 @@
           </div>
         </div>
       </section>
+
       <section>
         <div class="card">
-          <div class="card-header text-center">
-            Instructions
-          </div>
+          <div class="card-header text-center">Instructions</div>
           <div class="card-body">
             <div class="card-title">
-            <h5>Click the button below to enter the project
-              information.</h5>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Project Name</li>
-                <li class="list-group-item">Project Type</li>
-                <li class="list-group-item">Due Date</li>
-                <li class="list-group-item">Hourly Rate</li>
-              </ul>
+              <h5>Click the button below to enter the project information.</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Project Name</li>
+              <li class="list-group-item">Project Type</li>
+              <li class="list-group-item">Due Date</li>
+              <li class="list-group-item">Hourly Rate</li>
+            </ul>
           </div>
           <div class="card-footer text-muted">
             <a href="#" class="btn btn-primary">Add Project</a>
           </div>
         </div>
-        <!-- <div class="card" style="width: 18rem">
-          <div>
-            <h5 class="card-header">Instructions</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class=" list-group-item instruction">
-              Click the button below to open the form to provide project
-              information.
-            </li>
-            <li class="list-group-item">Project Name</li>
-            <li class="list-group-item">Project Type</li>
-            <li class="list-group-item">Due Date</li>
-            <li class="list-group-item">Hourly Rate</li>
-          </ul>
-        </div>
-        <div>
-          <button class="btn btn-primary">Add Project</button>
-        </div> -->
       </section>
+
+      <section>
+        <div class="modal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add a New Project</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="project-name">Project Name:</label>
+                  <input type="text" class="form-control" placeholder="Project Name" id="project-name">
+                </div>
+
+                  <div class="form-group">
+                    <label for="project-type">Project Type:</label>
+                    <select class="form-control" id="project-type">
+                      <option selected disabled>Choose One</option>
+                      <option value="Front End Application">Front End Application</option>
+                      <option value="Back End Application">Back End Application</option>
+                      <option value="Mobile Application">Mobile Application </option>
+                    </select>
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <label for="hourly-rate">Hourly Rate ($):</label>
+                  <input type="number" class="form-control" placeholder="$0.00" id="hourly-rate">
+                </div>
+
+                <div class="form-group">
+                  <label for="due-date">Due Date:</label>
+                  <input type="text" class="form-control" placeholder="When is the project due?" id="project-name">
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <script src="./assets/js/script.js"></script>
     </main>
+
   </body>
 </html>
