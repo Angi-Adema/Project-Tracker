@@ -15,31 +15,42 @@
 }
 
 .card {
-    width: 150px;
+    width: 350px;
     margin: 20px;
+}
+
+.card-body {
+    padding: 0;
+    border: 1px solid #1B263B;
 }
 
 .card-header {
     background-color: #1B263B;
     color: white;
-    border: 1px solid #1B263B;
+    font-size: 25px;
 }
 
-.instruction {
+.card-title {
     background-color: lightgray;
     padding: 10px;
-    list-style-type: none;
+    margin-bottom: 0;
 }
 
-ul {
-    border: 1px solid #1B263B;
-}
-
-.list-group-item {
-    border: 1px solid #1B263B;  
+.list-group {
+    border-top: 1px solid #1B263B;
 }
 
 .btn {
-    background-color: #1B263B; 
-    border: 1px solid #1B263B;
+    width: 307px;
+    background-color: #1B263B;
 }
+
+.card-footer {
+    border-left: 1px solid #1B263B;
+    border-right: 1px solid #1B263B;
+    border-bottom: 1px solid #1B263B;
+    background-color: lightgray;
+}
+
+
+
