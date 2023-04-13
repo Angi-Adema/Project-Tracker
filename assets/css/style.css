@@ -1,9 +1,8 @@
- .jumbotron {
-background-color: #1b263b;
-color: white;
+.jumbotron {
+  background-color: #1b263b;
+  color: white;
 }
 .card-body {
-
   border: 1px solid #1b263b;
 }
 .card-header {
@@ -16,15 +15,14 @@ color: white;
   display: flex;
   justify-content: center;
   font-size: 25px;
-} 
+}
 
 .list-group {
   border-top: 1px solid #1b263b;
 }
 
 .btn {
-
-  width: 75%;
+  width: 100%;
   background-color: #1b263b;
 }
 
@@ -37,8 +35,21 @@ color: white;
 
 .table {
   background-color: #778da9;
-} 
+  border: 1px solid #1b263b;
+}
 
-.modal-footer{
-    flex-wrap: nowrap;
+.modal-header {
+  background-color: #1b263b;
+  color: white;
+}
+
+.modal-footer {
+  flex-wrap: nowrap;
+  background-color: lightgray;
+  border: 1px solid #1b263b;
+}
+
+#display {
+  background-color: lightgray;
+  border: 1px solid #1b263b;
 }
