@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,7 +23,6 @@
 
   <body>
     <main>
-
       <section>
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
@@ -38,67 +36,134 @@
 
       <section>
         <div class="card">
-          <div class="card-header text-center">Instructions</div>
+          <div class="card-header text-center">
+            <p>Instructions</p>
+          </div>
           <div class="card-body">
             <div class="card-title">
               <h5>Click the button below to enter the project information.</h5>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Project Name</li>
-              <li class="list-group-item">Project Type</li>
-              <li class="list-group-item">Due Date</li>
-              <li class="list-group-item">Hourly Rate</li>
-            </ul>
+            <div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Project Name</li>
+                <li class="list-group-item">Project Type</li>
+                <li class="list-group-item">Due Date</li>
+                <li class="list-group-item">Hourly Rate</li>
+              </ul>
+            </div>
           </div>
           <div class="card-footer text-muted">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#project-modal">Add Project</button>
+            <button
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#project-modal"
+            >
+              Add Project
+            </button>
           </div>
         </div>
       </section>
 
+      <!--table-->
+      <section class="col-12 col-md-8 col-lg-9">
+        <div class="table-responsive">
+          <table class="table table-bordered custom-table">
+            <thead>
+              <tr>
+                <th scope="col">Project Name</th>
+                <th scope="col">Project Type</th>
+                <th scope="col">Hourly Wage</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Days Until Due</th>
+                <th scope="col">Estimated Earnings</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="display"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!--modal-->
       <section>
         <div class="modal" id="project-modal" tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Add a New Project</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="project-name">Project Name:</label>
-                  <input type="text" class="form-control" placeholder="Project Name" id="project-name">
-                </div>
+              <form id="form">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="project-name">Project Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Project Name"
+                      id="project-name"
+                    />
+                  </div>
 
                   <div class="form-group">
                     <label for="project-type">Project Type:</label>
                     <select class="form-control" id="project-type">
                       <option selected disabled>Choose One</option>
-                      <option value="Front End Application">Front End Application</option>
-                      <option value="Back End Application">Back End Application</option>
-                      <option value="Mobile Application">Mobile Application </option>
+                      <option value="Front End Application">
+                        Front End Application
+                      </option>
+                      <option value="Back End Application">
+                        Back End Application
+                      </option>
+                      <option value="Mobile Application">
+                        Mobile Application
+                      </option>
                     </select>
                   </div>
 
-                </div>
-                <div class="form-group">
-                  <label for="hourly-rate">Hourly Rate ($):</label>
-                  <input type="number" class="form-control" placeholder="$0.00" id="hourly-rate">
+                  <div class="form-group">
+                    <label for="hourly-rate">Hourly Rate ($):</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="$0.00"
+                      id="hourly-rate"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="due-date">Due Date:</label>
+                    <input
+                      type="text"
+                      min="1"
+                      class="form-control"
+                      placeholder="When is the project due?"
+                      id="due-date"
+                    />
+                  </div>
                 </div>
 
-                <div class="form-group">
-                  <label for="due-date">Due Date:</label>
-                  <input type="text" min='1' class="form-control" placeholder="When is the project due?" id="due-date">
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Submit Project
+                  </button>
                 </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit Project</button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -106,6 +171,5 @@
 
       <script src="./assets/js/script.js"></script>
     </main>
-
   </body>
 </html>

@@ -1,3 +1,6 @@
+var modelEl = $('#project-modal');
+
+
 // Date and time on hero banner.
 var datetime = null,
   date = null;
