@@ -1,8 +1,5 @@
 var modelEl = $("#project-modal");
 var formEl = $("#form");
-var nameEl = $("#project-name");
-var projectTypeEl = $("#project-type");
-var rateEl = $("#hourly-rate");
 var dueDateEl = $("#due-date");
 var tableDisplayEl = $("#display");
 
@@ -28,12 +25,15 @@ function projectInfo(name, type, rate, due) {
   var projectRateEl = $("<td>").text(rate);
   var projectDueEl = $("<td>").text(due);
 
-  var daysToDue = moment(dueDate, "MM/DD/YYYY").diff(moment(), "days");
+  var daysToDue = moment(due, "MM/DD/YYYY").diff(moment(), "days");
+
   var remainingDays = $("<td>").text(daysToDue);
 
-  var earnings = calculateEarnings(hourlyRate, daysToDue);
+  var earnings = calculateEarnings(rate, daysToDue);
 
-  var projectTotalEl = $("<td>").text("$" + earnings);
+  var projectTotalEl = $("<td>")
+    .addClass("delete-btn")
+    .text("$" + earnings);
 
   var deleteProject = $("<td>").text("X");
 
@@ -49,10 +49,39 @@ function projectInfo(name, type, rate, due) {
 
   tableDisplayEl.append(rowEl);
 
-  modalEl.modal("hide");
+  // modalEl.modal("hide");
 }
 
-// Date picker in modal.
-$(function () {
-  $("#due-date").datepicker({ minDate: 1 });
-});
+function calculateEarnings(rate, days) {
+  var dailyEarnings = rate * 8;
+  var total = dailyEarnings * days;
+  return total;
+}
+
+function handleDeleteProject(event) {
+  console.log(event.target);
+  var btnClick = $(event.target);
+  btnClick.parent("tr").remove();
+}
+
+function handleProjectSubmit(event) {
+  event.preventDefault();
+
+  var projName = $('#project-name').val().trim();
+  var projType = $('#project-type').val()
+  var hourRate = $("#hourly-rate").val()
+  var dateDue = $("#due-date").val()
+
+
+  projectInfo(projName, projType, hourRate, dateDue);
+
+  formEl[0].reset();
+  $('#project-modal').modal('hide')
+}
+
+formEl.on("submit", handleProjectSubmit);
+tableDisplayEl.on("click", ".delete-btn", handleDeleteProject);
+
+dueDateEl.datepicker({ minDate: 1 });
+
+
