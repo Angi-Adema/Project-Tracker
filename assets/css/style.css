@@ -54,7 +54,12 @@
 
 .table {
     background-color: #778DA9;
-    
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    margin: 0;
 }
 
 
