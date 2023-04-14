@@ -2,6 +2,8 @@
 
 In this project, you will work with others to create a project tracker application using Bootstrap, jQuery, jQueryUI, Moment, and Google Fonts. Break up these phases amongst members of your team.
 
+![Project Tracker Screenshot](./assets/image/projectTrackerSS.png)
+
 ## Instructions
 
 This mini-project is divided into four tasks. The first three tasks will get you to MVP, so focus on those first!
